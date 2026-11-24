@@ -10,7 +10,9 @@
 順番に下記のよう実行してください。
 
 ```bash
-$ git clone git@github.com:Riichi828/robosys2026_report.git
+$ git clone https://github.com/Riichi828/robosys2026_report.git
+
+$ cd robosys2026_report
 
 $ chmod +x deg rad test.bash
 ```
