@@ -15,7 +15,7 @@ $ git clone git@github.com:Riichi828/robosys2026_report.git
 $ chmod +x deg rad test.bash
 ```
 
-##使用方法
+## 使用方法
 
 例１
 ラジアン(rad)から度(deg)へ変換したい場合
@@ -31,13 +31,13 @@ $ echo 180 | ./rad
 $ echo 30 | ./rad
 ```
 
-##必要なソフトウェア
+## 必要なソフトウェア
 - Python
  - 3.x
 
-##テスト環境
+## テスト環境
 - Ubuntu 24.04.1 LTS
 
-##ライセンス
+## ライセンス
 - このソフトウェアパッケージは、3条項BSDライセンスの 下、再頒布および使用が許可されます。
 - © 2026 Riichi Yamada 
