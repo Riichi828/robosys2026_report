@@ -18,14 +18,14 @@ $ chmod +x deg rad test.bash
 ## 使用方法
 
 例１
-ラジアン(rad)から度(deg)へ変換したい場合
+度(deg)へ変換したい場合
 
 ```bash
 $ echo 180 | ./rad
 ```
 
 例２
-度(deg)からラジアン(red)に変換したい場合
+ラジアン(red)へ変換したい場合
 
 ```bash
 $ echo 30 | ./rad
@@ -33,7 +33,7 @@ $ echo 30 | ./rad
 
 ## 必要なソフトウェア
 - Python
- - 3.x
+ * 3.x
 
 ## テスト環境
 - Ubuntu 24.04.1 LTS
