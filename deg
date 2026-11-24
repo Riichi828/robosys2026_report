@@ -3,28 +3,27 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 import sys
-import statistics
+import math
 
-data = []
+if len(sys.argv) != 1:
+    print("使用法: ./deg <標準入力からラジアン(rad)を渡す>", file=sys.stderr)
+    sys.exit(1)
+
+has_data = False
 
 for line in sys.stdin:
     for item in line.split():
         try:
-            data.append(float(item))
+            val = float(item)
+            if math.isnan(val) or math.isinf(val):
+                raise ValueError
         except ValueError:
             print(f"エラー: 数値以外の値が含まれています -> '{item}'", file=sys.stderr)
             sys.exit(1)
 
-if not data:
+        has_data = True
+        print(math.degrees(val))
+
+if not has_data:
     print("エラー: データが入力されていません", file=sys.stderr)
     sys.exit(1)
-
-print(f"データ数: {len(data)}")
-print(f"合計値  : {sum(data)}")
-print(f"平均値  : {statistics.mean(data)}")
-print(f"中央値  : {statistics.median(data)}")
-print(f"最小値  : {min(data)}")
-print(f"最大値  : {max(data)}")
-
-if len(data) >= 2:
-    print(f"標準偏差: {statistics.stdev(data)}")

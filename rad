@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# SPDX-FileCopyrightText:2026 Riichi Yamada
+# SPDX-License-Identifier: BSD-3-Clause
+
+import sys
+import math
+
+if len(sys.argv) != 1:
+    print("使用法: ./rad <標準入力から度(deg)を渡す>", file=sys.stderr)
+    sys.exit(1)
+
+has_data = False
+
+for line in sys.stdin:
+    for item in line.split():
+        try:
+            val = float(item)
+            if math.isnan(val) or math.isinf(val):
+                raise ValueError
+        except ValueError:
+            print(f"エラー: 数値以外の値が含まれています -> '{item}'", file=sys.stderr)
+            sys.exit(1)
+
+        has_data = True
+        print(math.radians(val))
+
+if not has_data:
+    print("エラー: データが入力されていません", file=sys.stderr)
+    sys.exit(1)
